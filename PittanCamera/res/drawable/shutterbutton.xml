@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector
+     xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- ビューが使用不可になっているときは「droid_disabl.png」を表示 -->
+    <item android:state_enabled="false">
+        <shape android:shape = "oval">
+            <solid
+                android:color = "#333333"/>
+            <stroke
+                android:color="#000000"
+                android:width="2dp" />
+            <size 
+            	android:height = "80dp"
+            	android:width = "80dp" />
+        </shape>
+    </item>
+ 
+    <!-- ビューがタッチされているとき -->
+    <item android:state_pressed="true">
+        <shape android:shape = "oval">
+            <gradient
+		        android:startColor="#FFFFFF"
+		        android:centerColor="#FFFFFF"
+		        android:endColor="#E0EA3A"
+		        android:angle="315" />
+            <!-- 
+            <stroke
+                android:color="#FFFFFF"
+                android:width="2dp" /><solid
+                android:color = "#FFFF33"/> -->
+            <size 
+            	android:height = "80dp"
+            	android:width = "80dp" />
+        </shape>
+    </item>
+    <!-- ビューが タッチされていないとき -->
+    <item android:state_pressed="false">
+        <shape android:shape = "oval">
+            <!-- <solid
+            	android:color = "#33FFFF"/> -->
+            <gradient
+		        android:startColor="#FFFFB7"
+		        android:endColor="#FF9900"
+		        android:angle="315" />
+            <stroke
+                android:color="#FF5E19"
+                android:width="2dp" />
+            <size 
+            	android:height = "80dp"
+            	android:width = "80dp" />
+        </shape>
+    </item>
+</selector>

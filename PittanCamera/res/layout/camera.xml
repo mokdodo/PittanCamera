@@ -1,0 +1,260 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rootLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradv"
+    android:splitMotionEvents="false">
+    <jp.xdomain.katsura131.camera.PhotoView
+        android:id="@+id/preview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"/>
+	<jp.xdomain.katsura131.camera.WatermarkView
+	    xmlns:android="http://schemas.android.com/apk/res/android"
+	    android:id="@+id/watermarkView"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_centerHorizontal="true"
+	    android:layout_centerVertical="true"/>
+	<RelativeLayout
+	    android:id="@+id/tuningLayout"
+	    android:layout_width="match_parent"
+    	android:layout_height="match_parent">
+		<TextView
+		    android:id="@+id/tuningModeTitle"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_alignParentTop="true"
+		    android:layout_alignParentLeft="true"
+		    android:background="#0000FF"
+		    android:textColor="#FFFFFF"
+		    android:textSize="25sp"
+		    android:text="@string/tuningModeTitle"/>
+		<TextView
+		    android:id="@+id/tuningModeMessage"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_below="@+id/tuningModeTitle"
+		    android:layout_alignLeft="@+id/tuningModeTitle"
+		    android:background="#0000FF"
+		    android:textColor="#FFFFFF"
+		    android:textSize="16sp"/>
+	</RelativeLayout>
+    <Button
+        android:id="@+id/tuningOK"
+        android:contentDescription="@string/tuningOKButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:text="@string/tuningOKButton"
+        android:background="@drawable/shutterbutton"
+        android:textSize="30sp" />
+    <ImageButton
+        android:id="@+id/shutter"
+        android:contentDescription="@string/shutter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_margin="10dp"
+        android:background="@drawable/shutterbutton"
+        android:src="@drawable/img_shutter" />
+    <ImageButton
+        android:id="@+id/watermarkButton"
+        android:contentDescription="@string/watermark"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/shutter"
+        android:layout_margin="5dp"
+        android:background="@drawable/smallbutton"
+        android:src="@drawable/img_watermark" />
+    <ImageButton
+        android:id="@+id/optionsButton"
+        android:contentDescription="@string/options"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@+id/shutter"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/smallbutton"
+        android:src="@drawable/img_setting" />
+    <ImageButton
+        android:id="@+id/switchCameraButton"
+        android:contentDescription="@string/switchCamera"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_above="@+id/shutter"
+        android:layout_margin="5dp"
+        android:background="@drawable/smallbutton"
+        android:src="@drawable/img_switch" />
+
+    <!-- Option Buttons (Additional Buttons) -->
+
+    <LinearLayout android:id="@+id/changeScaleButtonLayout"
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent">
+	    <ImageButton
+	        android:id="@+id/changeScaleButton"
+	        android:contentDescription="@string/options"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:background="@drawable/smallbutton"
+	        android:visibility="invisible"
+	        android:src="@drawable/img_scale" />
+    </LinearLayout>
+
+    <LinearLayout android:id="@+id/changeOpacityButtonLayout"
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent">
+	    <ImageButton
+	        android:id="@+id/changeOpacityButton"
+	        android:contentDescription="@string/options"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:background="@drawable/smallbutton"
+	        android:visibility="invisible"
+	        android:src="@drawable/img_opacity" />
+    </LinearLayout>
+
+
+    <LinearLayout android:id="@+id/blinkingButtonLayout"
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent"
+		android:gravity="bottom">
+	    <ImageButton
+	        android:id="@+id/blinkingButton"
+	        android:contentDescription="@string/options"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:background="@drawable/smallbutton"
+	        android:visibility="invisible"
+	        android:src="@drawable/img_blinking" />
+    </LinearLayout>
+    <LinearLayout android:id="@+id/autoRefreshButtonLayout"
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent"
+		android:gravity="bottom">
+	    <ImageButton
+	        android:id="@+id/autoRefreshButton"
+	        android:contentDescription="@string/options"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:background="@drawable/smallbutton"
+	        android:visibility="invisible"
+	        android:src="@drawable/img_autorefresh" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/tuningButtonLayout"
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent">
+	    <ImageButton
+	        android:id="@+id/tuningButton"
+	        android:contentDescription="@string/options"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:background="@drawable/tuningbutton"
+	        android:visibility="invisible"
+	        android:src="@drawable/img_setting" />
+    </LinearLayout>
+
+    <!-- End -->
+
+    <RelativeLayout
+        android:id="@+id/seekbarsLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_toLeftOf="@+id/optionsButton"
+	    android:layout_gravity="bottom"
+	    android:layout_margin="5dp"
+	    android:background="#6600FFFF"
+	    android:visibility="gone">
+        <TextView
+            android:id="@+id/seekbar_title"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentLeft="true"
+	        android:layout_alignParentTop="true"
+	        android:background="#66ffffff"
+	    	android:layout_margin="5dp"
+	    	android:padding="5dp"
+	    	android:textSize="20sp"
+	        android:text="@string/opacityOfWatermark"/>
+        <TextView
+	        android:id="@+id/seekbarPos"
+	        android:layout_width="match_parent"
+	        android:layout_height="50dp"
+	        android:layout_below="@+id/seekbar_title" />
+	    <SeekBar
+	        android:id="@+id/seekbar_Scale"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_alignBaseline="@+id/seekbarPos"
+	        android:layout_below="@+id/seekbar_title"
+	    	android:layout_marginTop="20dp"
+	    	android:layout_marginBottom="20dp" />
+	    <SeekBar
+	        android:id="@+id/seekbar_Opacity"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_alignBaseline="@+id/seekbarPos"
+	    	android:layout_marginTop="20dp"
+	    	android:layout_marginBottom="20dp" />
+        <TextView
+            android:id="@+id/seekbar_value"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_centerHorizontal="true"
+	        android:layout_below="@+id/seekbarPos"
+	        android:background="#66ffffff"
+	    	android:textSize="24sp"
+	    	android:layout_margin="10dp"
+	    	android:padding="5dp" />
+        <Button
+            android:id="@+id/seekbar_minusButton"
+	        android:layout_width="200dp"
+	        android:layout_height="wrap_content"
+	        android:layout_alignLeft="@+id/seekbarPos"
+	        android:layout_below="@+id/seekbarPos"
+	    	android:layout_margin="10dp"
+	    	android:background="@drawable/plusminusbutton"
+	        android:text="@string/minusButton"/>
+        <Button
+            android:id="@+id/seekbar_plusButton"
+	        android:layout_width="200dp"
+	        android:layout_height="wrap_content"
+	        android:layout_alignRight="@+id/seekbarPos"
+	        android:layout_below="@+id/seekbarPos"
+	    	android:layout_margin="10dp"
+	    	android:background="@drawable/plusminusbutton"
+	        android:text="@string/plusButton"/>
+        <Button
+            android:id="@+id/seekbar_closeButton"
+	        android:layout_width="80dp"
+	        android:layout_height="40dp"
+	        android:layout_alignParentTop="true"
+	        android:layout_alignParentRight="true"
+	    	android:background="@drawable/closebutton"
+	        android:text="@string/closeButton"/>
+    </RelativeLayout>
+    <LinearLayout
+        android:id="@+id/commentWindowLayout"
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent"
+		android:gravity="bottom|right">
+	    <TextView
+	            android:id="@+id/commentWindow"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:background="#66ffffff"
+		        android:layout_margin="5dp"
+		        android:text=""
+		        android:textSize="16sp"
+			    android:visibility="gone"/>
+	</LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector
+     xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- ビューが使用不可になっているときは「droid_disabl.png」を表示 -->
+    <item android:state_enabled="false">
+        <shape android:shape = "oval">
+            <solid
+                android:color = "#66333333"/>
+            <size 
+            	android:height = "80dp"
+            	android:width = "80dp" />
+        </shape>
+    </item>
+ 
+    <!-- ビューがタッチされているとき -->
+    <item android:state_pressed="true">
+        <shape android:shape = "oval">
+            <solid
+                android:color = "#66FFEF85"/>
+            <size 
+            	android:height = "80dp"
+            	android:width = "80dp" />
+            
+        </shape>
+    </item>
+    <!-- ビューが タッチされていないとき -->
+    <item android:state_pressed="false">
+        <shape android:shape = "oval">
+            <solid
+            	android:color = "#66FFC34C"/>
+            <size 
+            	android:height = "80dp"
+            	android:width = "80dp" />
+            
+        </shape>
+    </item>
+</selector>
